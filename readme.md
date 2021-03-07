@@ -53,6 +53,11 @@ What's great about middleware is that once it receives the action, it can carry 
 - redirecting the action (e.g., to another piece of middleware)
 - dispatching supplementary actions
 
+### Add New Middleware: Logging
+
+The benefits of this logger() middleware function are huge while developing the application. We'll use this middleware to intercept all dispatch calls and log out what the action is that's being dispatched and what the state changes to after the reducer has run.
+`const store = Redux.createStore(rootReducer, Redux.applyMiddleware(logger))`
+
 ## UI
 
 We connect our functioning state application with a front-end UI. There are form fields and buttons on the UI that can be used to add new Todo items and Goal items to the state. Updating the state will also cause the entire application to re-render so that the visual representation of the application matches that of the info stored in the state object.
