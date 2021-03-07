@@ -100,7 +100,7 @@
         }
       }
 
-      //Create a new store and pass in root our reducer
+      //Create a new store and combine reducers into one root reducer
       const store = Redux.createStore(
         Redux.combineReducers({
           todos,
