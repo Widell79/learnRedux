@@ -2,12 +2,11 @@
 
 Our app can handle adding/removing todo/goal items as well as toggling an item (as complete or incomplete)!
 
-## How ut works
+## Reducer composition
 
-Whenever dispatch is called, we invoke our app function. The app function will then invoke the todos reducer as well as the goals reducer. Those will return their specific portions of the state. And then, the app function will return a state object with a todos property (the value of which is what the todos reducer returned) and a goals property (the value of which is what the goals reducer returned).
+We have two main properties on our state tree: todos and goals. Naturally, we'd create an individual reducer for both of those and then create a single root reducer using Redux's `combineReducers` method.
 
-We use JavaScript constants instead of strings to call our actions.
-Our `.dispatch()` calls special functions called action creators, instead of passing in unique objects directly to them.
+`combineReducers`, is responsible for invoking all the other reducers, passing them the portion of their state that they care about. We're making one root reducer, by composing a bunch of other reducers together.
 
 ## UI
 
